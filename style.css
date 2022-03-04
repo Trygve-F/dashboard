@@ -1,0 +1,102 @@
+body {
+
+}
+
+.gridcontainer {
+    display: grid;
+    grid-template: 1fr 4fr / 1fr 4fr;
+}
+
+/*HEADER*/
+
+header {
+    grid-area: 1 / 2 / 1 / 4;
+}
+
+.searchbar {
+
+}
+
+.user {
+
+}
+
+.hiuser {
+
+}
+
+.usermenu {
+
+}
+
+/*SIDEBAR*/
+
+sidebar {
+    grid-area: 1 / 1 / 2 / 1;
+}
+
+.sidebarheader {
+
+}
+
+.sidebartop {
+
+}
+
+.sidebarbottom {
+
+}
+
+.sidebarbtn {
+
+}
+
+/*MAINCONTENT*/
+
+maincontent {
+    grid-area: 2 / 2 / 2 / 2;
+    display:grid;
+    grid-template: 1fr 1fr / 3fr 1fr;
+}
+
+.yourprojectscontainer {
+    display: grid;
+    grid-template: repeat(3, 200px) / repeat(3, 1fr);
+}
+
+.yourprojects {
+    grid-area: 1 / 1 / 3 / 1;
+}
+
+.projects {
+
+}
+
+.images {
+
+}
+
+.announcementscontainer {
+    
+}
+
+.announcements {
+    grid-area: 1 / 2 / 1 / 2;
+}
+
+.announce {
+
+}
+
+.trendingcontainer {
+    
+}
+
+.trending {
+    grid-area: 2 / 2 / 2 / 2;
+}
+
+.trendingusers {
+
+}
+
