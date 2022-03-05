@@ -1,23 +1,17 @@
 html {
-    font-size: 30px;
+    font-size: 18px;
 }
 
 body {
-    background-color: rgb(165, 165, 165);
     height: 100vh;
-
-}
-
-.gridcontainer {
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 300px 1fr;
     grid-template-rows: auto 1fr;  
     grid-template-areas:
     'sidebar header'
     'sidebar content';
-    
-    
 }
+
 
 /*HEADER*/
 
@@ -30,34 +24,108 @@ header {
     grid-template-areas: 
     'search control'
     'hithere usermenu';
+    box-shadow: 0px 4px 10px rgb(87, 87, 87);
 }
 
 .searchbar {
     grid-area: search;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;;
     align-items:center;
+    flex-direction: row-reverse;
+    padding-left: 20px;
+}
+
+#search {
+    width: 30vw;
+    height: 30px;
+    border-radius: 30px;
+    background-color:rgb(224, 222, 222);
+    border-style: none;
+}
+
+.searchbar > img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
 }
 
 .user {
     grid-area: control;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-right: 60px;
 
+}
+
+#notificationbtn {
+    width: 20px;
+    height: 20px;
+    padding: 20px;
+}
+
+#userprofilepic {
+    width: 40px;
+    height: 40px;
+    padding: 20px;
 }
 
 .hiuser {
     grid-area: hithere;
+    display: grid;
+    grid-template: 1fr / 1fr 2fr;
+    grid-template-areas: 
+    'image hithere'
+    'image name';
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+.hiuser > img {
+    height: 60px;
+    width: auto;
+    grid-area: image;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.hiuser > div {
+    font-size: .8rem;
+    grid-area: hithere;
+    padding-top: 20px;
+    font-weight: bold;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+}
+
+.hiuser > h2 {
+    grid-area: name;
+    margin-top: 0;
+    font-size: 1.4rem;
+    width: 600px;
+
 }
 
 .usermenu {
     grid-area: usermenu;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.usermenubtn {
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: rgb(0, 127, 201);
+    color: white;
+    border-style: none;
+    font-size: .8rem;
+    font-weight: bold;
+    margin: 30px;
 }
 
 /*SIDEBAR*/
@@ -66,16 +134,24 @@ sidebar {
     grid-area: sidebar;
     display: grid;
     grid-template-rows: 100px 1fr 1fr 1fr;
-    background-color: rgb(28, 173, 221);
+    background-color: rgb(0, 127, 201)
 }
 
 .sidebarheader {
     display: flex;
-    justify-content: center;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
     align-items: center;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     font-weight: bold;
     color: white;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.sidebarheader > img {
+    width: 50px;
+    padding: 0px 20px 0px 30px;
 }
 
 .sidebartop {
@@ -96,10 +172,14 @@ sidebar {
     flex-direction: row-reverse;
     justify-content: flex-end;
     padding: 10px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     color: white;
+}
 
+.sidebarbtn > img {
+    width: 30px;
+    padding: 0px 20px 0px 30px;
 }
 
 /*MAINCONTENT*/
@@ -107,71 +187,112 @@ sidebar {
 maincontent {
     grid-area: content;
     display:grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows:10px 2fr 10px 2fr;
     grid-template-columns: 3fr 1fr;
-    grid-template-areas: 
+    grid-template-areas:
+    'header announcementsheader'
     'yourprojects announcements'
+    'yourprojects trendingheader'
     'yourprojects trending';
-    gap: 15px;
+    gap: 35px;
     padding: 30px 30px 0px 30px;
+    background-color:rgb(224, 222, 222);
 }
 
-.yourprojectscontainer {
-    display: grid;
-    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
-    gap: 15px;
-    
-}
 
 .yourprojects {
     grid-area: yourprojects;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+    gap: 30px;
 }
 
+#yourprojectsheader {
+    grid-area: header;
+    font-size: 1.3rem;
+}
 .projects {
+    display: flex;
+    flex-direction: column;
     background-color: white;
-    padding: 30px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgb(87, 87, 87);
+    border-left: 10px solid rgb(255, 198, 43);
 }
 
+.projects > .images {
+display: flex;
+flex: 1;
+justify-content: flex-end;
+align-items: flex-end;
+}
+
+.images > img {
+height: 25px;
+padding: 10px;
+}
 .projects > div {
     font-size: 1em;
 }
 
-.images {
-
-}
-
-.announcementscontainer {
+.announcements {
+    grid-area: announcements;
     display: grid;
     grid-template: repeat(3, 1fr) / 1fr;
     background-color: white;
     gap: 15px;
-    padding: 15px;
+    padding: 25px;
+    box-shadow: 0px 4px 10px rgb(87, 87, 87);
     
 }
 
-.announcements {
-    grid-area: announcements;
-    
+#announcementsheader {
+    grid-area: announcementsheader;
+    font-size: 1.3rem;
 }
 
 .announce {
-    
-}
-
-
-
-.trendingcontainer {
-    background-color: white;
-    gap: 15px;
-    padding: 15px;
-    
+    font-size: .7rem;
 }
 
 .trending {
     grid-area: trending;
+    background-color: white;
+    gap: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgb(87, 87, 87);
+}
+
+#trendingheader {
+    grid-area: trendingheader;
+    font-size: 1.3rem;
 }
 
 .trendingusers {
-
+    display: grid;
+    grid-template: 1fr/ 1fr 2fr;
+    grid-template-areas:
+    'photo user'
+    'photo title';
+    padding: 10px;
 }
 
+.trendingusers > img {
+    grid-area: photo;
+    width: 40px;
+    justify-self: center;
+}
+
+.trendingusers > div {
+    font-size: 0.7rem;
+}
+
+h2 {
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
+
+h3 {
+    margin-bottom: 5px;
+    margin-top: 0px;
+}
