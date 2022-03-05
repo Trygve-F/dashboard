@@ -233,15 +233,15 @@ maincontent {
 }
 
 .projects > .images {
-display: flex;
-flex: 1;
-justify-content: flex-end;
-align-items: flex-end;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .images > img {
-height: 25px;
-padding: 10px;
+    height: 25px;
+    padding: 10px;
 }
 .projects > div {
     font-size: 1em;
